@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mostrar Citas</title>
+    
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav>
+    <ul>
+        <li><a href="/inicio">Inicio</a></li>
+        <li><a href="/agendar">Agendar Cita</a></li>
+        <li><a href="/citas">Ver Citas</a></li>
+    </ul>
+</nav>
+
+<h2>Citas Registradas</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cédula</th>
+            <th>Sexo</th>
+            <th>Dirección</th>
+            <th>Fecha y Hora</th>
+            <th>Médico</th>
+            <th>Especialidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="cita : ${citas}">
+            <td th:text="${cita.nombre}"></td>
+            <td th:text="${cita.apellido}"></td>
+            <td th:text="${cita.cedula}"></td>
+            <td th:text="${cita.sexo}"></td>
+            <td th:text="${cita.direccion}"></td>
+            <td th:text="${cita.fechaHora}"></td>
+            <td th:text="${cita.medico}"></td>
+            <td th:text="${cita.especialidad}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

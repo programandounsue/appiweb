@@ -1,0 +1,24 @@
+package appi.apiweb;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class UsuarioController {
+
+   
+    @GetMapping("/registro")
+    public String mostrarFormularioRegistro(Usuario usuario) {
+        return "registro"; 
+    }
+
+
+    @PostMapping("/registro")
+    public String procesarFormulario(@ModelAttribute Usuario usuario) {
+        
+        System.out.println("Usuario Registrado: " + usuario.getNombre() + ", " + usuario.getEmail());
+        return "resultado"; 
+    }
+}

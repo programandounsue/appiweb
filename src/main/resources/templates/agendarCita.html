@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agendar Cita</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+
+</head>
+<body>
+
+
+<nav>
+    <ul>
+        <li><a href="/inicio">Inicio</a></li>
+        <li><a href="/agendar">Agendar Cita</a></li>
+        <li><a href="/citas">Ver Citas</a></li>
+    </ul>
+</nav>
+
+
+<h2>Agendar Cita Médica</h2>
+<form action="/agendar" method="post" th:object="${cita}">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" th:field="*{nombre}" required /><br>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" th:field="*{apellido}" required /><br>
+
+    <label for="cedula">Cédula:</label>
+    <input type="text" id="cedula" th:field="*{cedula}" required /><br>
+
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" th:field="*{sexo}">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select><br>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" th:field="*{direccion}" required /><br>
+
+    <label for="fechaHora">Fecha y Hora:</label>
+    <input type="datetime-local" id="fechaHora" th:field="*{fechaHora}" required /><br>
+
+    <label for="medico">Médico:</label>
+    <input type="text" id="medico" th:field="*{medico}" required /><br>
+
+    <label for="especialidad">Especialidad:</label>
+    <input type="text" id="especialidad" th:field="*{especialidad}" required /><br>
+
+    <button type="submit">Registrar Cita</button>
+</form>
+
+</body>
+</html>
